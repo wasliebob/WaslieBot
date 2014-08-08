@@ -154,7 +154,8 @@ public class CommandDrama implements ICommand{
 		mods.add("Applied Energistics");
 		mods.add("Twilight Forest");
 		mods.add("Buildcraft");
-		
+		mods.add("Hexxit");
+
 		//Extras
 		extras.add("hates");
 		extras.add("sues");
