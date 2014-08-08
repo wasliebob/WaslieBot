@@ -2,17 +2,12 @@ package wasliebot.main;
 
 import org.jibble.pircbot.PircBot;
 
-import wasliebot.commands.CommandChangelog;
-import wasliebot.commands.CommandDrama;
-import wasliebot.commands.CommandExit;
-import wasliebot.commands.CommandHelp;
-import wasliebot.commands.CommandJoin;
-import wasliebot.commands.CommandLatest;
-import wasliebot.commands.CommandRoll;
 import wasliebot.helpers.UserHelper;
+import wasliebot.helpers.Utils;
 import wasliebot.interfaces.ICommand;
 import wasliebot.misc.Messages;
 import wasliebot.registry.CommandRegistry;
+import wasliebot.registry.Commands;
 
 public class WaslieBot extends PircBot{
 	public static void init(){
@@ -26,12 +21,12 @@ public class WaslieBot extends PircBot{
         }catch(Exception e){
         	e.printStackTrace();
         }
-    	
     	bot.joinChannels();
 	}
 	
 	public WaslieBot(){
-		initCommandRegistry();
+		Commands.initCommands();
+    	Messages.initPrivateMessages();
 	}
 	public static WaslieBot bot;
 	public static CharSequence prefix = "?";
@@ -39,6 +34,7 @@ public class WaslieBot extends PircBot{
     public void joinChannels(){
     	String[] channels = new String[]{
     			"wasliebob",
+    			"WaslieBot",
     			"WaslieTest"};
     	
     	for(String s : channels)
@@ -75,18 +71,6 @@ public class WaslieBot extends PircBot{
     
     @Override
     public void onPrivateMessage(String sender, String login, String hostname, String message){
-    	sendMessage(sender, Messages.onPM);
-    }
-
-    public void initCommandRegistry(){
-    	CommandRegistry.registerCommand("changelog", new CommandChangelog());
-    	CommandRegistry.registerCommand("latest", new CommandLatest());
-    	CommandRegistry.registerCommand("roll", new CommandRoll());
-    	CommandRegistry.registerCommand("join", new CommandJoin());
-    	CommandRegistry.registerCommand("drama", new CommandDrama());
-    	
-    	CommandRegistry.registerCommand("help", new CommandHelp());
-    	CommandRegistry.registerCommand("exit", new CommandExit());
-
+    	sendMessage(sender, Messages.onPM.get(Utils.random(0, Messages.onPM.size() - 1)));
     }
 }

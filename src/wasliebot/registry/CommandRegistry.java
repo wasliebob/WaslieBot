@@ -6,8 +6,8 @@ import java.util.Set;
 import wasliebot.interfaces.ICommand;
 
 public class CommandRegistry {
-	public static void registerCommand(String input, ICommand message){
-		commands.put(input, message);
+	public static void registerCommand(String input, ICommand command){
+		commands.put(input, command);
 	}
 	
 	public static boolean commandExists(String input){
