@@ -1,3 +1,6 @@
+/**
+* Created by wasliebob, on 10 aug. 2014, at 19:07:43
+*/
 package wasliebot.registry;
 
 import wasliebot.commands.CommandChangelog;
@@ -17,7 +20,7 @@ public class Commands {
     	CommandRegistry.registerCommand("join", new CommandJoin());
     	CommandRegistry.registerCommand("drama", new CommandDrama());
     	CommandRegistry.registerCommand("source", new CommandSource());
-    	
+
     	CommandRegistry.registerCommand("help", new CommandHelp());
     	CommandRegistry.registerCommand("exit", new CommandExit());
     }

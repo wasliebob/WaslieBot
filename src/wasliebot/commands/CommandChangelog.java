@@ -1,3 +1,6 @@
+/**
+ * Created by wasliebob, on 10 aug. 2014, at 19:07:43
+*/
 package wasliebot.commands;
 
 import wasliebot.helpers.FileHelper;

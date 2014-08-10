@@ -1,3 +1,6 @@
+/**
+* Created by wasliebob, on 10 aug. 2014, at 19:07:43
+*/
 package wasliebot.commands;
 
 import java.util.ArrayList;
@@ -166,7 +169,10 @@ public class CommandDrama implements ICommand{
 		extras.add("scams");
 		extras.add("donates");
 		extras.add("supports");
-		extras.add("Is being weird");
+		extras.add("is being weird against");
+		extras.add("touches");
+		extras.add("yells at");
+		extras.add("downloads");
 		
 		//Reasons
 		reasons.add("because a new build is done.");
